@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/City_Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Floor_Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Location_Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyBookings_Service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Notification_Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Parking_Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Payment_Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Profile_Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Registation_Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/State_Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/User_Service/src/main/java" charset="UTF-8" />
   </component>
 </project>
