@@ -45,8 +45,8 @@ public class CityService {
                 .map(this::mapToDTO)
                 .toList();
     }
-    public APIResponseDto getCityById(Long id) {
-        CityEntity city = repository.findById(id)
+    public APIResponseDto getCityById(Long cityId) {
+        CityEntity city = repository.findById(cityId)
                 .orElseThrow(() -> new RuntimeException("City not found"));
         ResponseEntity<StateResponseDTO> responseEntity=restTemplate.getForEntity("http://localhost:1909/api/states/"+city.getStateId()
                 , StateResponseDTO.class);

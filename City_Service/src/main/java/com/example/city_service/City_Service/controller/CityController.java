@@ -32,10 +32,13 @@ public class CityController {
         return ResponseEntity.ok(service.getAllCities());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<APIResponseDto> getById(@PathVariable Long id) {
-   APIResponseDto apiResponseDto=service.getCityById(id);
-        return new ResponseEntity<>(apiResponseDto,HttpStatus.OK);
+    @GetMapping("/{cityId}")
+    public ResponseEntity<CityResponseDTO> getById(@PathVariable Long cityId) {
+
+        CityResponseDTO city =
+                service.getCityById(cityId).getCityResponseDTO();
+
+        return ResponseEntity.ok(city);
     }
 
     @PutMapping("/{id}")
