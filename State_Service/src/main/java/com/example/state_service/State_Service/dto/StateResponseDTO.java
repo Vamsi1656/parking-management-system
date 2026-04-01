@@ -16,6 +16,7 @@ public class StateResponseDTO {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+
     public StateResponseDTO(Long id, String name, String code, String country, Boolean isActive, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;

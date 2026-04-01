@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class StateController {
     private StateService service;
 
     // ✅ CREATE STATE
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/state")
     public ResponseEntity<StateResponseDTO> createState(
             @RequestBody @Valid StateRequestDTO stateRequestDTO) {
@@ -27,7 +29,7 @@ public class StateController {
 
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
-
+    @PreAuthorize("hasAnyRole('ADMIN','USER')")
     @GetMapping
     public ResponseEntity<List<StateResponseDTO>> getAllStates() {
 
@@ -40,6 +42,7 @@ public class StateController {
         StateResponseDTO state = service.getStateById(stateId);
         return new ResponseEntity<>(state, HttpStatus.OK);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<StateResponseDTO> updateState(
             @PathVariable Long id,
@@ -48,6 +51,7 @@ public class StateController {
         StateResponseDTO updated = service.updateState(id, dto);
         return new ResponseEntity<>(updated, HttpStatus.OK);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteState(@PathVariable Long id) {
 
