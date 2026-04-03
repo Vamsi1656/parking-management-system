@@ -39,6 +39,14 @@ public class PaymentService {
 
     //Save Payment After Success
     public PaymentEntity savePayment(PaymentRequest request){
+        if (repo.existsByPaymentId(request.getPaymentId())) {
+            throw new RuntimeException("Payment already saved!");
+        }
+
+        if (repo.existsByOrderId(request.getOrderId())) {
+            throw new RuntimeException("Order already processed!");
+        }
+
         PaymentEntity pay = new PaymentEntity();
 
         pay.setOrderId(request.getOrderId());

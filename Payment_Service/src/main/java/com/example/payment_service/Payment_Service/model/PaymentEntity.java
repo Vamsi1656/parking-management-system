@@ -18,8 +18,15 @@ public class PaymentEntity {
 
     private String orderId;
     private String paymentId;
-    private String status;
+    private PaymentStatus status;
     private double amount;
     private String userId;
 
+    public PaymentEntity(String orderId, String paymentId, PaymentStatus status, double amount, String userId) {
+        this.orderId = orderId;
+        this.paymentId = paymentId;
+        this.status = status;
+        this.amount = amount;
+        this.userId = userId;
+    }
 }
