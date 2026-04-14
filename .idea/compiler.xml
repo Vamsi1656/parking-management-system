@@ -2,20 +2,41 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for Notification_Service" enabled="true">
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for Location_Service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
+        <module name="State_Service" />
+        <module name="MyBookings_Service" />
         <module name="Notification_Service" />
+        <module name="User_Service" />
+        <module name="City_Service" />
+        <module name="Location_Service" />
+        <module name="Parking_Service" />
+        <module name="Registation_Service" />
+        <module name="Profile_Service" />
+        <module name="Floor_Service" />
+        <module name="Payment_Service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="City_Service" options="-parameters" />
+      <module name="Floor_Service" options="-parameters" />
+      <module name="Location_Service" options="-parameters" />
+      <module name="MyBookings_Service" options="-parameters" />
       <module name="Notification_Service" options="-parameters" />
+      <module name="Parking_Service" options="-parameters" />
+      <module name="Payment_Service" options="-parameters" />
+      <module name="Profile_Service" options="-parameters" />
+      <module name="Registation_Service" options="-parameters" />
+      <module name="State_Service" options="-parameters" />
+      <module name="User_Service" options="-parameters" />
     </option>
   </component>
 </project>
